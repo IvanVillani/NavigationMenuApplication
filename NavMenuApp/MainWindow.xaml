@@ -1,0 +1,51 @@
+﻿<Window
+    x:Class="NavMenuApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:NavMenuApp.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:NavMenuApp.ViewModels"
+    xmlns:views="clr-namespace:NavMenuApp.Views"
+    Title="Content"
+    Width="600"
+    Height="450"
+    mc:Ignorable="d">
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:AccountViewModel}">
+                <views:AccountView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+                <views:LoginView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RegisterViewModel}">
+                <views:RegisterView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:DeleteAccountViewModel}">
+                <views:DeleteAccountView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:UpdateAccountViewModel}">
+                <views:UpdateAccountView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ChatViewModel}">
+                <views:ChatView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:InboxViewModel}">
+                <views:InboxView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:AccountsViewModel}">
+                <views:AccountsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:DebugViewModel}">
+                <views:DebugView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:LayoutViewModel}">
+                <components:Layout />
+            </DataTemplate>
+        </ContentControl.Resources>
+    </ContentControl>
+</Window>

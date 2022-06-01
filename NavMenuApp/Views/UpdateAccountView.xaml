@@ -1,0 +1,54 @@
+﻿<UserControl
+    x:Class="NavMenuApp.Views.UpdateAccountView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:PasswordBoxMVVM.Components;assembly=PasswordBoxMVVM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:NavMenuApp.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid
+        MaxWidth="1000"
+        Margin="20"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            FontSize="28"
+            Text="Update Account" />
+
+        <StackPanel Grid.Row="1" Margin="0 20 0 0">
+            <StackPanel>
+                <TextBlock Text="Enter Username to update:" />
+                <TextBox Text="{Binding EnteredUsername}" />
+                <TextBlock Text="(This will change account privileges!)" />
+            </StackPanel>
+        </StackPanel>
+
+        <Button
+            Grid.Row="2"
+            Margin="0 20 0 0"
+            Padding="5 2"
+            HorizontalAlignment="Left"
+            Command="{Binding UpdateAccountCommand}"
+            Content="Update" />
+
+        <TextBlock
+            Grid.Row="3"
+            HorizontalAlignment="Center"
+            Foreground="Red"
+            Text="{Binding ErrorMessage}" />
+    </Grid>
+</UserControl>
