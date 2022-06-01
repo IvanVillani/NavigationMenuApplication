@@ -20,6 +20,7 @@ namespace NavMenuApp.Commands
             _viewModel = viewModel;
             _navigationService = navigationService;
             _errorMessageStore = errorMessageStore;
+            _errorMessageStore.ErrorMessage = null;
         }
 
         public override void Execute(object parameter)

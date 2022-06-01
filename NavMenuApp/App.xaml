@@ -145,7 +145,7 @@
             </DataTemplate.Triggers>
         </DataTemplate>
 
-        <x:Array x:Key="NavigationMenuGeneralOptions" Type="system:String">
+        <x:Array x:Key="MenuGeneralOptions" Type="system:String">
             <system:String>Home</system:String>
             <system:String>Account</system:String>
             <system:String>Login</system:String>
@@ -193,7 +193,7 @@
             </DataTemplate.Triggers>
         </DataTemplate>
 
-        <x:Array x:Key="NavigationMenuExtendedOptions" Type="system:String">
+        <x:Array x:Key="MenuExtendedOptions" Type="system:String">
             <system:String>Chat</system:String>
             <system:String>Inbox</system:String>
             <system:String>Accounts</system:String>

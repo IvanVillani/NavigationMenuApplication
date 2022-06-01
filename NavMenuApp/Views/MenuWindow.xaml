@@ -26,7 +26,7 @@
 
         <Rectangle Grid.Column="0" Margin="-1" Fill="{StaticResource PrimaryDarkBrush}"></Rectangle>
 
-        <!--<local:NavigationMenu Grid.Column="1" DataContext="{Binding NavigationMenuViewModel}" />-->
+        <!--<local:Menu Grid.Column="1" DataContext="{Binding MenuViewModel}" />-->
 
         <Grid Grid.Column="1" Background="{StaticResource PrimaryDarkBrush}">
             <Grid.Resources>
@@ -66,19 +66,19 @@
 
             <Line Grid.Row="1"  Style="{StaticResource horizontalLineStyle}"/>
 
-            <ItemsControl x:Name="NavigationMenuGeneralControls" 
+            <ItemsControl x:Name="MenuGeneralControls" 
                  Grid.Row="2"
                  Style="{StaticResource NavigationListBoxStyle}"
                  ItemTemplate="{DynamicResource NavigationDataGeneralTemplate}"
-                 ItemsSource="{StaticResource NavigationMenuGeneralOptions}"/>
+                 ItemsSource="{StaticResource MenuGeneralOptions}"/>
 
             <Line Grid.Row="3"  Style="{StaticResource horizontalLineStyle}"/>
 
-            <ItemsControl x:Name="NavigationMenuExtededControls" 
+            <ItemsControl x:Name="MenuExtededControls" 
                  Grid.Row="4"
                  Style="{StaticResource NavigationListBoxStyle}"
                  ItemTemplate="{DynamicResource NavigationDataExtendedTemplate}"
-                 ItemsSource="{StaticResource NavigationMenuExtendedOptions}"/>
+                 ItemsSource="{StaticResource MenuExtendedOptions}"/>
 
         </Grid>
 

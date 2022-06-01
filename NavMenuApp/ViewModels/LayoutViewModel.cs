@@ -6,18 +6,18 @@ namespace NavMenuApp.ViewModels
 {
     public class LayoutViewModel : ViewModelBase
     {
-        public NavigationMenuViewModel NavigationMenuViewModel { get; }
+        public MenuViewModel MenuViewModel { get; }
         public ViewModelBase ContentViewModel { get; }
 
-        public LayoutViewModel(NavigationMenuViewModel navigationMenuViewModel, ViewModelBase contentViewModel)
+        public LayoutViewModel(MenuViewModel navigationMenuViewModel, ViewModelBase contentViewModel)
         {
-            NavigationMenuViewModel = navigationMenuViewModel;
+            MenuViewModel = navigationMenuViewModel;
             ContentViewModel = contentViewModel;
         }
 
         public override void Dispose()
         {
-            NavigationMenuViewModel.Dispose();
+            MenuViewModel.Dispose();
             ContentViewModel.Dispose();
 
             base.Dispose();

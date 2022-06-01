@@ -32,7 +32,7 @@ namespace NavMenuApp
 
             MenuWindow menu = new MenuWindow()
             {
-                DataContext = CreateNavigationMenuViewModel()
+                DataContext = CreateMenuViewModel()
             };
             _windowStore.Menu = menu;
 
@@ -65,7 +65,7 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new HomeViewModel(CreateLoginNavigationService()),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
         private INavigationService<LoginViewModel> CreateLoginNavigationService()
@@ -74,7 +74,7 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new LoginViewModel(_errorMessageStore, _accountStore, CreateAccountNavigationService()),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
         private INavigationService<RegisterViewModel> CreateRegisterNavigationService()
@@ -83,7 +83,7 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new RegisterViewModel(_errorMessageStore, CreateLoginNavigationService()),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
         private INavigationService<DeleteAccountViewModel> CreateDeleteAccountNavigationService()
@@ -92,7 +92,7 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new DeleteAccountViewModel(_errorMessageStore, CreateHomeNavigationService()),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
         private INavigationService<UpdateAccountViewModel> CreateUpdateAccountNavigationService()
@@ -101,7 +101,7 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new UpdateAccountViewModel(_errorMessageStore, CreateHomeNavigationService()),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
         private INavigationService<AccountViewModel> CreateAccountNavigationService()
@@ -110,7 +110,7 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new AccountViewModel(_accountStore, CreateHomeNavigationService()),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
         private INavigationService<ChatViewModel> CreateChatNavigationService()
@@ -119,7 +119,7 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new ChatViewModel(),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
         private INavigationService<InboxViewModel> CreateInboxNavigationService()
@@ -128,7 +128,7 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new InboxViewModel(),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
         private INavigationService<AccountsViewModel> CreateAccountsNavigationService()
@@ -137,7 +137,7 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new AccountsViewModel(),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
         private INavigationService<DebugViewModel> CreateDebugNavigationService()
@@ -146,12 +146,12 @@ namespace NavMenuApp
                 _navigationStore,
                 _windowStore,
                 () => new DebugViewModel(),
-                CreateNavigationMenuViewModel);
+                CreateMenuViewModel);
         }
 
-        private NavigationMenuViewModel CreateNavigationMenuViewModel()
+        private MenuViewModel CreateMenuViewModel()
         {
-            return new NavigationMenuViewModel(_accountStore,
+            return new MenuViewModel(_accountStore,
                 _windowStore,
                 CreateHomeNavigationService(),
                 CreateAccountNavigationService(),

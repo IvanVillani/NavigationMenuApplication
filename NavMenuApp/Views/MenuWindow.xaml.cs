@@ -28,7 +28,7 @@ namespace NavMenuApp.Views
 
         private void Menu_Closing(object sender, CancelEventArgs e)
         {
-            (this.DataContext as NavigationMenuViewModel).DisposeWindows();
+            (this.DataContext as MenuViewModel).DisposeWindows();
         }
     }
 }

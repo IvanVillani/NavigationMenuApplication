@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace NavMenuApp.ViewModels
 {
-    public class NavigationMenuViewModel : ViewModelBase
+    public class MenuViewModel : ViewModelBase
     {
         private readonly AccountStore _accountStore;
         private readonly WindowStore _windowStore;
@@ -29,7 +29,7 @@ namespace NavMenuApp.ViewModels
         public bool IsLoggedOut => !_accountStore.IsLoggedIn;
         public bool IsAccountPrivileged => _accountStore.IsAccountPrivileged;
 
-        public NavigationMenuViewModel(AccountStore accountStore,
+        public MenuViewModel(AccountStore accountStore,
             WindowStore windowStore,
             INavigationService<HomeViewModel> homeNavigationService,
             INavigationService<AccountViewModel> accountNavigationService,

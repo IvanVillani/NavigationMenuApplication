@@ -11,22 +11,22 @@ namespace NavMenuApp.Services
         private readonly NavigationStore _navigationStore;
         private readonly WindowStore _windowStore;
         private readonly Func<TViewModel> _createViewModel;
-        private readonly Func<NavigationMenuViewModel> _createNavigationMenuViewModel;
+        private readonly Func<MenuViewModel> _createMenuViewModel;
 
         public LayoutNavigationService(NavigationStore navigationStore, 
             WindowStore windowStore,
             Func<TViewModel> createViewModel,
-            Func<NavigationMenuViewModel> createNavigationMenuViewModel)
+            Func<MenuViewModel> createMenuViewModel)
         {
             _navigationStore = navigationStore;
             _windowStore = windowStore;
             _createViewModel = createViewModel;
-            _createNavigationMenuViewModel = createNavigationMenuViewModel;
+            _createMenuViewModel = createMenuViewModel;
         }
 
         public void Navigate()
         {
-            NavigationMenuViewModel navigationMenuViewModel = _createNavigationMenuViewModel();
+            MenuViewModel navigationMenuViewModel = _createMenuViewModel();
 
             _windowStore.UpdateMenuDataContext(navigationMenuViewModel);
 
